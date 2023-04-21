@@ -32,7 +32,8 @@
 			</Button>
 			<TextBlock Text="السلام عليكم ورحمة الله وبركاتة وكل عام وانتم بخير" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-			<controls:Progress IsActive="True" Height="200" Width="200"
+			<controls:Progress IsActive="True" 
+							   Height="50" Width="50"
 							   HorizontalAlignment="Left"
 							   VerticalAlignment="Top"
 							   Foreground="Green"/>
