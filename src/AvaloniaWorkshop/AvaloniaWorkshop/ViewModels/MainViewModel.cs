@@ -1,7 +1,1 @@
-﻿namespace AvaloniaWorkshop.ViewModels
-{
-    public class MainViewModel : ViewModelBase
-    {
-        public string Greeting => "Welcome to Avalonia!";
-    }
-}
+﻿using System.Collections.ObjectModel; using System.Linq;  namespace AvaloniaWorkshop.ViewModels {     public class MainViewModel : ViewModelBase     {         public ObservableCollection<string> Data { get; set; } = new ObservableCollection<string>();         public MainViewModel()         {              var data = Enumerable.Range(0, 1000).Select(a=> a.ToString());              foreach (var item in data)             {                 Data.Add(item);             }         }     } }

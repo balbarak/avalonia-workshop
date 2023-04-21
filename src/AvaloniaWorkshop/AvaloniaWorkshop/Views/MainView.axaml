@@ -5,13 +5,47 @@
              xmlns:viewModels="clr-namespace:AvaloniaWorkshop.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaWorkshop.Views.MainView"
+			 FlowDirection="RightToLeft"
              Foreground="White"
              Background="#171C2C">
-  <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-    <viewModels:MainViewModel />
-  </Design.DataContext>
+		<viewModels:MainViewModel />
+	</Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<Grid>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="200"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Vertical" Margin="20">
+			<Button Width="100">
+				<Button.Flyout>
+					<Flyout>
+						<TextBlock Text="We"/>
+					</Flyout>
+				</Button.Flyout>
+				<TextBlock HorizontalAlignment="Center">
+					Welcome
+				</TextBlock>
+			</Button>
+			<TextBlock Text="السلام عليكم ورحمة الله وبركاتة وكل عام وانتم بخير" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		</StackPanel>
+
+		<ScrollViewer Grid.Row="1">
+			<ItemsRepeater Items="{Binding Data}">
+				<ItemsRepeater.ItemTemplate>
+					<DataTemplate>
+						<Border CornerRadius="4" Padding="4">
+							<TextBlock Text="{Binding}"/>
+						</Border>
+					</DataTemplate>
+				</ItemsRepeater.ItemTemplate>
+			</ItemsRepeater>
+		</ScrollViewer>
+	
+	</Grid>
+
 </UserControl>
