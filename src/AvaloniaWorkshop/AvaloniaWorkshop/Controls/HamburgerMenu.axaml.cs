@@ -180,7 +180,7 @@ public class HamburgerMenu : TemplatedControl
 
     private static void OnIsOpenChanged(IAvaloniaObject arg1, bool arg2)
     {
-        if (arg1 is HamburgerMenu hamburger)
+        if (arg1 is HamburgerMenu hamburger && arg2)
         {
             hamburger.OnIsOpenChanged();
         }
