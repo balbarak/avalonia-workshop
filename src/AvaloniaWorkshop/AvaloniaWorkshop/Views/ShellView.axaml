@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			  xmlns:controls="using:AvaloniaWorkshop.Controls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
+             x:Class="AvaloniaWorkshop.Views.ShellView">
+
+	<Grid RowDefinitions="120,*">
+		<Border Padding="20">
+			<CheckBox x:Name="chkBox">
+				Toggle Hamburger Menud
+			</CheckBox>
+		</Border>
+
+		<controls:HamburgerMenu
+			Grid.Row="1"
+				Background="Red"
+				BorderBrush="#dbdbdb"
+				BorderThickness="0 0 1 0"
+				IsOpen="{Binding ElementName=chkBox,Path=IsChecked}">
+			<controls:HamburgerMenu.Content>
+				<TextBlock Text="Hello World !"/>
+			</controls:HamburgerMenu.Content>
+		</controls:HamburgerMenu>
+	</Grid>
+</UserControl>

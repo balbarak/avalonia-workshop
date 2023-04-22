@@ -1,0 +1,48 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:AvaloniaWorkshop.Controls">
+
+	<Design.PreviewWith>
+		<Grid Background="Yellow">
+			<controls:HamburgerMenu
+					Background="#f2f2f2"
+					BorderBrush="#dbdbdb"
+					BorderThickness="0 0 1 0"
+				IsOpen="True">
+				<controls:HamburgerMenu.Content>
+					<StackPanel>
+						<TextBlock Text="Hello World !"/>
+						<TextBlock Text="Hello World !"/>
+						<TextBlock Text="Hello World !"/>
+					</StackPanel>
+				</controls:HamburgerMenu.Content>
+
+			</controls:HamburgerMenu>
+		</Grid>
+	</Design.PreviewWith>
+
+	<Style Selector="controls|HamburgerMenu">
+		<!-- Set Defaults -->
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid ColumnDefinitions="2*,*"
+					  x:Name="PART_Container"
+					  Background="Black"
+					  Opacity=".8">
+					<Border
+						x:Name="PART_Menu"
+						Width="0"
+						Grid.Row="0"
+						Background="Yellow"
+						HorizontalAlignment="Left"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}">
+						
+						<ContentControl Content="{TemplateBinding Content}"/>
+					</Border>
+				</Grid>
+
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>
