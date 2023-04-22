@@ -12,12 +12,13 @@
 	</Design.DataContext>
 
 	<Grid RowDefinitions="*,Auto" Margin="10">
+		
 		<TransitioningContentControl Content="{Binding CurrentView}" />
 
 		<StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="5"
 					HorizontalAlignment="Right">
-			<Button Command="{Binding LoginViewCommand}" Content="Login" />
-			<Button Command="{Binding NavigateNextCommand}" Content="Home" />
+			<Button Command="{Binding GoToLoginCommand}" Content="Login" />
+			<Button Command="{Binding GoToHomeCommand}" Content="Home" />
 		</StackPanel>
 	</Grid>
 

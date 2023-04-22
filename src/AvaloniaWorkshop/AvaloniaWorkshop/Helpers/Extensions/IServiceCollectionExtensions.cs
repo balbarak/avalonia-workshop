@@ -11,7 +11,6 @@ namespace AvaloniaWorkshop
 {
     public static class IServiceCollectionExtensions
     {
-
         public static void AddPageTransient<TViewModel, TView>(this IServiceCollection services)
             where TViewModel : ViewModelBase
             where TView : UserControl, new()
@@ -29,6 +28,8 @@ namespace AvaloniaWorkshop
 
                 return view;
             });
+
+            NavigationService.PageMapping.Add(typeof(TViewModel), typeof(TView));
         }
 
         public static void AddPageSingleton<TViewModel, TView>(this IServiceCollection services)
@@ -48,6 +49,8 @@ namespace AvaloniaWorkshop
 
                 return view;
             });
+
+            NavigationService.PageMapping.Add(typeof(TViewModel), typeof(TView));
         }
     }
 }

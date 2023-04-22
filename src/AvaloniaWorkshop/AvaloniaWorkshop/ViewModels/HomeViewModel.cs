@@ -8,5 +8,8 @@ namespace AvaloniaWorkshop.ViewModels
 {
     public partial class HomeViewModel : ViewModelBase
     {
+        public HomeViewModel()
+        {
+        }
     }
 }

@@ -17,5 +17,13 @@ namespace AvaloniaWorkshop.Activations
 
             app.MainView = mainView;
         }
+
+        public static async Task ActivateDesktop(IClassicDesktopStyleApplicationLifetime app)
+        {
+            var mainView = App.AppHost.Services.GetService<MainView>();
+
+            app.MainWindow = new MainWindow();
+            app.MainWindow.Content = App.AppHost.Services.GetService<MainView>();
+        }
     }
 }
