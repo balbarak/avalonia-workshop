@@ -3,77 +3,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:AvaloniaWorkshop.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
              x:Class="AvaloniaWorkshop.Views.MainView"
 			xmlns:controls="using:AvaloniaWorkshop.Controls"
-             Foreground="White"
-             Background="#171C2C">
+            >
 	<Design.DataContext>
-		<!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
 		<viewModels:MainViewModel />
 	</Design.DataContext>
 
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="200"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-		<StackPanel Orientation="Vertical" Margin="20">
-			<Button Width="100">
-				<Button.Flyout>
-					<Flyout>
-						<TextBlock Text="We"/>
-					</Flyout>
-				</Button.Flyout>
-				<TextBlock HorizontalAlignment="Center">
-					Welcome
-				</TextBlock>
-			</Button>
-			<TextBlock Text="السلام عليكم ورحمة الله وبركاتة وكل عام وانتم بخير" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<Grid RowDefinitions="*,Auto" Margin="10">
+		<TransitioningContentControl Content="{Binding CurrentView}" />
 
-			<controls:Progress IsActive="True" Height="200" Width="200"
-							   HorizontalAlignment="Left"
-							   VerticalAlignment="Top"
-							   Foreground="Green"/>
+		<StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="5"
+					HorizontalAlignment="Right">
+			<Button Command="{Binding LoginViewCommand}" Content="Login" />
+			<Button Command="{Binding NavigateNextCommand}" Content="Home" />
 		</StackPanel>
-
-		<!--<ListBox Items="{Binding Data}" SelectionMode="Single" VirtualizationMode="Simple" Grid.Row="1">
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<Border CornerRadius="4" Padding="4">
-						<StackPanel>
-							<TextBlock Text="Hello"/>
-							<TextBlock Text="{Binding}" FontSize="10"/>
-						</StackPanel>
-					</Border>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>-->
-
-		<ScrollViewer Grid.Row="1" Margin="10">
-			<ItemsRepeater Items="{Binding Data}" >
-				<ItemsRepeater.Layout>
-					<StackLayout Spacing="10"
-						Orientation="Vertical" />
-
-				</ItemsRepeater.Layout>
-				<ItemsRepeater.ItemTemplate>
-					<DataTemplate>
-						<Border
-							Margin="0,10,0,0"
-							BorderThickness="1"
-							Padding="5">
-							<StackPanel>
-								<TextBlock Text="Hello"/>
-								<TextBlock Text="{Binding}" FontSize="10"/>
-							</StackPanel>
-						</Border>
-					</DataTemplate>
-				</ItemsRepeater.ItemTemplate>
-			</ItemsRepeater>
-		</ScrollViewer>
-
 	</Grid>
 
 </UserControl>
