@@ -11,5 +11,15 @@ namespace AvaloniaWorkshop.ViewModels
         public HomeViewModel()
         {
         }
+
+        public override async Task OnAppearing()
+        {
+            IsBusy = true;
+
+            await Task.Delay(2000);
+            
+            IsBusy = false;
+
+        }
     }
 }

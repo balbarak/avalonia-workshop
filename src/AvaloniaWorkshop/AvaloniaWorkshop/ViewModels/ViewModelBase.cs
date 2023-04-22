@@ -6,6 +6,10 @@ namespace AvaloniaWorkshop.ViewModels
 {
     public class ViewModelBase : ObservableObject
     {
+        protected bool _isBusy;
+
+        public bool IsBusy { get=> _isBusy; set=> SetProperty(ref _isBusy,value); }
+
         protected INavigationService _navService;
 
         public ViewModelBase()

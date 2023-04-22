@@ -1,8 +1,20 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="using:AvaloniaWorkshop.Controls"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AvaloniaWorkshop.Views.HomeView">
-  Welcome to Avalonia!
+             mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
+             xmlns:vm="using:AvaloniaWorkshop.ViewModels"
+			 x:Class="AvaloniaWorkshop.Views.HomeView">
+
+	<Design.DataContext>
+		<vm:HomeViewModel />
+	</Design.DataContext>
+
+	<Grid>
+		<controls:Progress 
+			Height="40" Width="40"
+			IsActive="{Binding IsBusy}"/>
+	</Grid>
+
 </UserControl>

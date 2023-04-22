@@ -5,6 +5,7 @@
              xmlns:viewModels="clr-namespace:AvaloniaWorkshop.ViewModels"
              mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
              x:Class="AvaloniaWorkshop.Views.MainView"
+			 x:DataType="viewModels:MainViewModel"
 			xmlns:controls="using:AvaloniaWorkshop.Controls"
             >
 	<Design.DataContext>
@@ -19,6 +20,7 @@
 					HorizontalAlignment="Right">
 			<Button Command="{Binding GoToLoginCommand}" Content="Login" />
 			<Button Command="{Binding GoToHomeCommand}" Content="Home" />
+			<Button Command="{Binding GoToControlsCommand}" Content="Controls" />
 		</StackPanel>
 	</Grid>
 

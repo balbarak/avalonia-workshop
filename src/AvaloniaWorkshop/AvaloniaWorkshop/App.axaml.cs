@@ -16,6 +16,7 @@ using Microsoft.Extensions.Hosting; using Microsoft.Extensions.Logging;  n
                    
                    services.AddPageTransient<HomeViewModel, HomeView>();
                    services.AddPageTransient<LoginViewModel, LoginView>();
+                   services.AddPageTransient<ControlsViewModel, ControlsView>();
 
                })
                .ConfigureLogging((hostContext, configLogging) =>
