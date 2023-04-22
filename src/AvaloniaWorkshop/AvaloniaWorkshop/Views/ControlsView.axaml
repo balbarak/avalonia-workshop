@@ -6,10 +6,29 @@
              x:Class="AvaloniaWorkshop.Views.ControlsView">
 
 	<ScrollViewer Margin="20">
-		<StackPanel>
+		<StackPanel Spacing="30">
 			<Button Width="180">
 				<TextBlock Text="Default Button" HorizontalAlignment="Center"/>
 			</Button>
+
+			<StackPanel>
+				<Label>
+					Date Picker
+				</Label>
+				<DatePicker/>
+			</StackPanel>
+			<StackPanel>
+				<Label>
+					Time Picker
+				</Label>
+				<TimePicker/>
+			</StackPanel>
+			<StackPanel>
+				<Label>
+					Calendar
+				</Label>
+				<Calendar  />
+			</StackPanel>
 		</StackPanel>
 	</ScrollViewer>
 </UserControl>
