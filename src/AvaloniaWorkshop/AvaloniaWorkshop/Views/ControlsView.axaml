@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
+             x:Class="AvaloniaWorkshop.Views.ControlsView">
+
+	<ScrollViewer Margin="20">
+		<StackPanel Spacing="30">
+			<Button Width="180">
+				<TextBlock Text="Default Button" HorizontalAlignment="Center"/>
+			</Button>
+
+			<StackPanel>
+				<Label>
+					Date Picker
+				</Label>
+				<DatePicker/>
+			</StackPanel>
+			<StackPanel>
+				<Label>
+					Time Picker
+				</Label>
+				<TimePicker/>
+			</StackPanel>
+			<StackPanel>
+				<Label>
+					Calendar
+				</Label>
+				<Calendar  />
+			</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
+</UserControl>

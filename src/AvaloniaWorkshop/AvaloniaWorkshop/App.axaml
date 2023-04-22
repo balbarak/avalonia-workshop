@@ -5,8 +5,8 @@
 
 	
 	<Application.Styles>
-		<FluentTheme Mode="Dark"/>
-		<StyleInclude Source="/Controls/ProgressRing/Progress.axaml"/>
+		<FluentTheme Mode="Light"/>
+		<StyleInclude Source="/Controls/Progress.axaml"/>
 	</Application.Styles>
 
 
