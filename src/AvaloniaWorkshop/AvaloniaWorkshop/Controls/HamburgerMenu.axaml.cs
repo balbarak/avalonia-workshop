@@ -47,37 +47,6 @@ public class HamburgerMenu : TemplatedControl
 
         _totalTicks = (int)(_animationDuration.TotalSeconds / _frameRate.TotalSeconds);
         _timer.Tick += OnTimeTicked;
-
-        //_timer.Tick += (sender, e) =>
-        //{
-        //    if (_menu == null)
-        //        return;
-
-        //    if (!IsOpen)
-        //        return;
-
-        //    _isAnimating = true;
-        //    _currentTick++;
-
-        //    if (_currentTick > totalTicks)
-        //    {
-        //        _timer.Stop();
-        //        _isAnimating = false;
-        //        return;
-        //    }
-
-        //    var percentage = (float)_currentTick / totalTicks;
-
-        //    var easing = new QuarticEaseIn();
-
-        //    var finalWidth = _menuDesiredWidth * easing.Ease(percentage);
-
-
-        //    _menu.Width = finalWidth;
-
-        //    Debug.WriteLine($"Current Tick: {_currentTick}");
-        //};
-
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -97,9 +66,6 @@ public class HamburgerMenu : TemplatedControl
 
             _timer.Start();
         }
-
-
-
 
         base.Render(context);
     }
