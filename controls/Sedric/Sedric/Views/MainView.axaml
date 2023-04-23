@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Sedric.ViewModels"
+			 xmlns:controls="using:Sedric.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Sedric.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -12,5 +13,25 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<Grid RowDefinitions="20,*">
+		<CheckBox Margin="20" x:Name="chk">
+			Open Hamburger MEnu
+		</CheckBox>
+		<Grid ColumnDefinitions="Auto,*" Grid.Row="1">
+			<controls:HamburgerMenu 
+				Background="#f2f2f2"
+				BorderBrush="#dbdbdb"
+				BorderThickness="0 0 1 0"
+				IsOpen="{Binding ElementName=chk,Path=IsChecked}">
+				<controls:HamburgerMenu.Content>
+					<StackPanel>
+						<TextBlock Text="Menu One"/>
+						<TextBlock Text="Menu One"/>
+						<TextBlock Text="Menu One"/>
+					</StackPanel>
+				</controls:HamburgerMenu.Content>
+			</controls:HamburgerMenu>
+		</Grid>
+	</Grid>
+	
 </UserControl>
