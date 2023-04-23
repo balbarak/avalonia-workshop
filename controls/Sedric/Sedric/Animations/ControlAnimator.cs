@@ -52,6 +52,9 @@ namespace Sedric
 
         public void StartAnimation(Control control, StyledProperty<double> property)
         {
+            if (control == null)
+                return;
+
             _control = control;
             _property = property;
             _isReverse = _control.GetValue(_property) > _targetValue;

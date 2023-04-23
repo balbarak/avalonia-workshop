@@ -13,8 +13,9 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
+
 	<Grid RowDefinitions="20,*">
-		<CheckBox Margin="20" x:Name="chk">
+		<CheckBox Margin="20" x:Name="chk" >
 			Open Hamburger MEnu
 		</CheckBox>
 		<Grid ColumnDefinitions="Auto,*" Grid.Row="1">
@@ -23,11 +24,20 @@
 				BorderBrush="#dbdbdb"
 				BorderThickness="0 0 1 0"
 				IsOpen="{Binding ElementName=chk,Path=IsChecked}">
+				
 				<controls:HamburgerMenu.Content>
 					<StackPanel>
-						<TextBlock Text="Menu One"/>
-						<TextBlock Text="Menu One"/>
-						<TextBlock Text="Menu One"/>
+						<controls:HamburgerMenuItem Background="Yellow">
+							<TextBlock Text="First Item"/>
+						</controls:HamburgerMenuItem>
+						
+						<controls:HamburgerMenuItem>
+							<TextBlock Text="Second Item"/>
+						</controls:HamburgerMenuItem>
+
+						<controls:HamburgerMenuItem>
+							<TextBlock Text="Third Item"/>
+						</controls:HamburgerMenuItem>
 					</StackPanel>
 				</controls:HamburgerMenu.Content>
 			</controls:HamburgerMenu>
